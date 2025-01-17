@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Amy Jose - Personal WebPage</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #fbe9db;
+            margin: 0;
+            padding: 20px;
+            font-family: 'Georgia', serif;
+        }
+
+        h1 {
+            color: #ff6b6b;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        h2 {
+            color: green;
+            font-family: 'Trebuchet MS', sans-serif;
+            font-size: 14px;
+            font-weight: 300;
+            text-align: center;
+            font-style: italic;
+        }
+
+        .paragraph-container {
+            margin: 20px 0;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        /* Different background colors for each div */
+        .paragraph-container:nth-child(1) {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .paragraph-container:nth-child(2) {
+            background-color: rgba(255, 235, 235, 0.5);
+        }
+
+        .paragraph-container:nth-child(3) {
+            background-color: rgba(235, 255, 235, 0.5);
+        }
+
+        /* Different font families for each paragraph */
+        .p1 {
+            font-family: 'Georgia', serif;
+            font-size: 12px;
+            text-align: justify;
+        }
+
+        .p2 {
+            font-family: 'Arial', sans-serif;
+            font-size: 12px;
+            text-align: justify;
+        }
+
+        .p3 {
+            font-family: 'Verdana', sans-serif;
+            font-size: 12px;
+            text-align: justify;
+        }
+
+        /* Vertical text */
+        .vertical-text {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* Overflow content on hover */
+        .overflow-container {
+            max-height: 100px;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+        }
+
+        .overflow-container:hover {
+            max-height: 1000px;
+        }
+
+        /* Image styling */
+        .profile-image {
+            border-radius: 50%;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+            float: left;
+            margin-right: 15px;
+            margin-bottom: 20px;
+            max-height: 20vh;
+            width: auto;
+            border: 3px solid white;
+            padding: 3px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: gray;
+            font-family: 'Segoe UI', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Amy Jose</h1>
+    <h2>Creative at heart, techie by choice, adaptable always</h2>
+
+    <main>
+        <div class="paragraph-container">
+            <img src="images/img pic 2.jpg" class="profile-image" alt="Amy Jose's photo">
+            <p class="p1 overflow-container">
+                Hello! I'm a <b>second-year B.Tech Computer Science Engineering student</b> at Vellore Institute of Technology, Vellore. While I spend most of my time wrestling with <b>code</b> and debugging my way through life, my passions extend far beyond the keyboard. Growing up, I mastered the graceful moves of <b>Bharatnatyam</b> and <b>Mohiniyattam</b> and dabbled in <b>piano</b>—though let's just say my fingers are now more familiar with typing than playing melodies. These experiences have shaped my <b>creative outlook</b>, even if my dancing now involves dodging <b>deadlines rather than choreographed steps</b>. Alongside my creative side, I dabbled in the ancient art of <b>Abacus</b>, completing three levels and picking up some nifty mental math skills along the way.
+            </p>
+        </div>
+
+        <div class="paragraph-container">
+            <p class="p2 overflow-container">
+                When I'm not convincing my code to behave, I unwind by watching <b>movies</b>, listening to <b>music</b>, sketching, and spending quality time with <b>family and friends</b>. I also love getting lost in cooking videos or watching influencers work their makeup and skincare magic. If only my acne would cooperate like that! These activities recharge me and spark fresh ideas—because let's be real, inspiration often strikes while binge-watching your favorite series. I like to think I'm a unique blend: part <b>logical coder</b>, part <b>free-spirited artist</b>, and someone who believes a good laugh (and maybe snacks) can solve most of life's challenges.
+            </p>
+        </div>
+
+        <div class="paragraph-container">
+            <p class="p3 overflow-container">
+                I believe in <b>learning by doing</b>, embracing every new challenge, and finding joy in the unexpected. Whether it's cracking a tough problem, sketching something out of the blue, or bonding over shared memes, I approach life with <b>adaptability</b> and <b>humor</b>. My dream? To excel in <b>tech</b>, infuse <b>creativity</b> into every project, and maybe, just maybe, turn <b>late-night ideas</b> into something extraordinary. At heart, I'm a <b>loyal friend</b>, an <b>avid learner</b>, and someone who believes that the best adventures are the <b>unplanned ones</b>.
+            </p>
+        </div>
+    </main>
+
+    <div class="vertical-text">Amy Jose - Personal Website</div>
+
+    <footer>
+        <p>Created by Amy Jose. © 2024</p>
+    </footer>
+</body>
+</html>

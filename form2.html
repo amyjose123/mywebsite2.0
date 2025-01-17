@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Form</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
+            color: #2d3748;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            margin-bottom: 40px;
+        }
+
+        form {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.2);
+        }
+
+        fieldset {
+            border: none;
+            background: white;
+            margin: 0 0 30px 0;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(254, 202, 87, 0.1);
+        }
+
+        legend {
+            background: #ff6b6b;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(255, 107, 107, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #ff6b6b;
+            font-weight: 500;
+            font-size: 0.95em;
+        }
+
+        .inline-label {
+            display: inline-block;
+            margin-right: 20px;
+            font-weight: normal;
+            color: #4a5568;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ffd0d0;
+            border-radius: 10px;
+            background-color: #fff9f9;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        textarea:focus,
+        select:focus {
+            border-color: #ff6b6b;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.2);
+        }
+
+        .checkbox-group,
+        .radio-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 10px 0;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 8px;
+            accent-color: #ff6b6b;
+        }
+
+        select[multiple] {
+            height: auto;
+            min-height: 120px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        button {
+            background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: 600;
+            width: 100%;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+            background: linear-gradient(135deg, #ff5252 0%, #ffd632 100%);
+        }
+
+        input[list] {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23ff6b6b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            padding-right: 35px;
+        }
+
+        /* Custom selection color */
+        ::selection {
+            background: rgba(255, 107, 107, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <h1>Profile Form</h1>
+    <form action="#" method="POST">
+        <fieldset>
+            <legend>Personal Details</legend>
+            
+            <div class="form-group">
+                <label for="username">Your Name</label>
+                <input type="text" id="username" name="username" 
+                       placeholder="How should we call you?" required
+                       pattern="[A-Za-z ]{2,50}">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" 
+                       placeholder="your.email@example.com" required>
+            </div>
+
+            <div class="form-group">
+                <label>Gender Identity</label>
+                <div class="radio-group">
+                    <input type="radio" id="male" name="gender" value="male" required>
+                    <label for="male" class="inline-label">Male</label>
+                    
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female" class="inline-label">Female</label>
+                    
+                    <input type="radio" id="other" name="gender" value="other">
+                    <label for="other" class="inline-label">Other</label>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Your Interests</legend>
+
+            <div class="form-group">
+                <label>What do you love doing?</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="art" name="hobby" value="art">
+                    <label for="art" class="inline-label">Art & Design</label>
+                    
+                    <input type="checkbox" id="tech" name="hobby" value="tech">
+                    <label for="tech" class="inline-label">Technology</label>
+                    
+                    <input type="checkbox" id="food" name="hobby" value="food">
+                    <label for="food" class="inline-label">Cooking</label>
+                    
+                    <input type="checkbox" id="fitness" name="hobby" value="fitness">
+                    <label for="fitness" class="inline-label">Fitness</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="languages">Languages You Speak (Select multiple)</label>
+                <select id="languages" name="languages" size="3" multiple required>
+                    <option value="english">English</option>
+                    <option value="spanish">Spanish</option>
+                    <option value="french">French</option>
+                    <option value="german">German</option>
+                    <option value="mandarin">Mandarin</option>
+                    <option value="japanese">Japanese</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="location">Current Location</label>
+                <input list="cities" id="location" name="location" 
+                       placeholder="Where are you based?">
+                <datalist id="cities">
+                    <option value="San Francisco">
+                    <option value="New York">
+                    <option value="London">
+                    <option value="Berlin">
+                    <option value="Tokyo">
+                    <option value="Singapore">
+                    <option value="Sydney">
+                </datalist>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Tell Us More</legend>
+            
+            <div class="form-group">
+                <label for="bio">Your Story</label>
+                <textarea id="bio" name="bio" rows="4" 
+                          placeholder="Share something interesting about yourself..."
+                          maxlength="500"></textarea>
+            </div>
+        </fieldset>
+
+        <button type="submit">Submit Profile</button>
+    </form>
+</body>
+</html>

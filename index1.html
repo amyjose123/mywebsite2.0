@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Creative Portfolio</title>
+    <style>
+        :root {
+            --pink-light: #FFE5EC;
+            --pink-medium: #FFB6C1;
+            --pink-dark: #FF69B4;
+            --white: #FFFFFF;
+            --gray-dark: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            background-color: var(--pink-light);
+            color: var(--gray-dark);
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--pink-medium), var(--pink-dark));
+            padding: 3rem;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.2) 0%, transparent 60%);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        .nav {
+            background-color: var(--white);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 100;
+        }
+
+        .nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav a {
+            color: var(--pink-dark);
+            text-decoration: none;
+            font-weight: bold;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--pink-dark);
+            transition: width 0.3s ease;
+        }
+
+        .nav a:hover::after {
+            width: 100%;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .intro-section {
+            text-align: center;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .blog-card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-card h3 {
+            color: var(--pink-dark);
+            margin-bottom: 1rem;
+        }
+
+        .blog-card ul {
+            list-style: none;
+        }
+
+        .blog-card ul li {
+            margin: 0.5rem 0;
+        }
+
+        .blog-card ul li a {
+            color: var(--gray-dark);
+            text-decoration: none;
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--pink-light);
+            border-radius: 20px;
+            transition: background 0.3s ease;
+        }
+
+        .blog-card ul li a:hover {
+            background: var(--pink-medium);
+            color: var(--white);
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .form-group label {
+            color: var(--pink-dark);
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid var(--pink-light);
+            border-radius: 8px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--pink-dark);
+        }
+
+        .button {
+            background: var(--pink-dark);
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .button:hover {
+            transform: scale(1.05);
+        }
+
+        .footer {
+            background: linear-gradient(135deg, var(--pink-dark), var(--pink-medium));
+            color: var(--white);
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <h1>A Glimpse into My Web Development World</h1>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Home Section -->
+        <section id="home" class="intro-section">
+            <h2>About This Website</h2>
+            <p>Hi, I'm Amy! Welcome to my little space on the internet where I share my web development journey. From learning new coding techniques to building projects, I’m documenting everything along the way. Whether you're here for inspiration, advice, or just to see my progress, I hope you'll enjoy following my adventures in the world of tech!</p>
+        </section>
+
+        <!-- Blog Section (with removed navigation content) -->
+        <section id="blog">
+            <h2>Blog</h2>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <h3>Assignment 1A</h3>
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="list.html">List</a></li>
+                        <li><a href="table.html">Table</a></li>
+                    </ul>
+                </div>
+                <div class="blog-card">
+                    <h3>Assignment 1B</h3>
+                    <ul>
+                        <li><a href="differences.pdf">HTML Elements PDF</a></li>
+                        <li><a href="https://github.com/amyjose123">GitHub Repository</a></li>
+                        <li><a href="https://www.loom.com/share/6f3c7c3ea23a48a38fd24e3c55d8fd9d" target="_blank">Website Hosting Video</a></li>
+                    </ul>
+                </div>
+                <div class="blog-card">
+                    <h3>Assignment 1C</h3>
+                    <ul>
+                        <li><a href="form1.html">Form 1</a></li>
+                        <li><a href="form2.html">Form 2</a></li>
+                        <li><a href="divspan.html">Div/Span</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="button">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 My Website. All rights reserved.</p>
+    </footer>
+</body>
+</html>
